@@ -25,7 +25,7 @@ npm run build        # 输出到 out/
 
 `out/` 可以直接发到 GitHub Pages、Vercel、Cloudflare Pages。
 
-部署到 GitHub Pages 时设置 `GITHUB_PAGES=true`，站点会使用 `/pi-101` 作为子路径。
+部署到 GitHub Pages 时设置 `NEXT_PUBLIC_BASE_PATH=/pi-101`，站点会使用 `/pi-101` 作为子路径。
 
 线上地址：`https://chasel34.github.io/pi-101/`
 

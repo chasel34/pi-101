@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES, CHAPTERS, type Category } from "@/content/chapters";
+import { sitePath } from "@/lib/site-path";
 
 export function Sidebar({ activeSlug }: { activeSlug?: string }) {
   const byCat = (id: Category["id"]) => CHAPTERS.filter((c) => c.category === id);
@@ -7,7 +8,7 @@ export function Sidebar({ activeSlug }: { activeSlug?: string }) {
   return (
     <aside className="hidden h-screen w-64 shrink-0 overflow-y-auto border-r border-pi-line bg-pi-bg px-4 py-6 lg:block">
       <Link
-        href="/"
+        href={sitePath("/")}
         className="block px-2 pb-4 font-mono-title text-base font-bold tracking-tight"
       >
         ▶ Pi 101
@@ -29,7 +30,7 @@ export function Sidebar({ activeSlug }: { activeSlug?: string }) {
                 return (
                   <li key={ch.slug}>
                     <Link
-                      href={`/chapters/${ch.slug}/`}
+                      href={sitePath(`/chapters/${ch.slug}/`)}
                       className={`flex items-baseline gap-3 rounded-md px-2 py-1.5 text-sm transition ${
                         active
                           ? "bg-pi-primary-soft text-pi-primary"

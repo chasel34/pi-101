@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES, CHAPTERS, type Category } from "@/content/chapters";
+import { sitePath } from "@/lib/site-path";
 
 export function ChapterList() {
   const byCat = (id: Category["id"]) => CHAPTERS.filter((c) => c.category === id);
@@ -19,7 +20,7 @@ export function ChapterList() {
             {byCat(cat.id).map((ch) => (
               <li key={ch.slug}>
                 <Link
-                  href={`/chapters/${ch.slug}/`}
+                  href={sitePath(`/chapters/${ch.slug}/`)}
                   className="group flex items-center justify-between gap-4 rounded-lg px-3 py-2.5 transition hover:bg-pi-surface"
                 >
                   <div className="flex items-baseline gap-4">

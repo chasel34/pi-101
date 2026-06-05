@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { sitePath } from "@/lib/site-path";
 
 type Pkg = {
   id: string;
@@ -146,7 +147,7 @@ export function ArchitectureMap() {
             {current.chapters.map((ch) => (
               <a
                 key={ch.slug}
-                href={`/chapters/${ch.slug}/`}
+                href={sitePath(`/chapters/${ch.slug}/`)}
                 className="rounded-full bg-white/10 px-2.5 py-1 font-mono-title text-[11px] text-white/80 hover:bg-white/20"
               >
                 {String(ch.num).padStart(2, "0")} {ch.title}
