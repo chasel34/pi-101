@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { neighbors } from "@/content/chapters";
-import { sitePath } from "@/lib/site-path";
 
 /** 深入了解长文容器：分隔线 + 正文 + 上一章/下一章 */
 export function ChapterArticle({
@@ -18,7 +17,7 @@ export function ChapterArticle({
       <div className="chapter-article__prose">{children}</div>
       <nav className="chapter-article__nav">
         {prev ? (
-          <Link href={sitePath(`/chapters/${prev.slug}/`)}>
+          <Link href={`/chapters/${prev.slug}/`}>
             <span className="chapter-article__nav-label">← 上一章</span>
             <span className="chapter-article__nav-title">
               {String(prev.number).padStart(2, "0")} {prev.title}
@@ -28,7 +27,7 @@ export function ChapterArticle({
           <span />
         )}
         {next ? (
-          <Link href={sitePath(`/chapters/${next.slug}/`)} className="chapter-article__nav--right">
+          <Link href={`/chapters/${next.slug}/`} className="chapter-article__nav--right">
             <span className="chapter-article__nav-label">下一章 →</span>
             <span className="chapter-article__nav-title">
               {String(next.number).padStart(2, "0")} {next.title}

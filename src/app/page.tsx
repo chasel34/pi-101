@@ -3,7 +3,6 @@ import { TerminalHero } from "@/components/TerminalHero";
 import { ChapterList } from "@/components/ChapterList";
 import { ArchitectureMap } from "@/components/ArchitectureMap";
 import { CHAPTERS } from "@/content/chapters";
-import { sitePath } from "@/lib/site-path";
 
 export default function HomePage() {
   const firstSlug = CHAPTERS[0].slug;
@@ -29,7 +28,7 @@ export default function HomePage() {
         </div>
         <div className="mt-8">
           <Link
-            href={sitePath(`/chapters/${firstSlug}/`)}
+            href={`/chapters/${firstSlug}/`}
             className="inline-flex items-center gap-2 rounded-full bg-pi-primary px-7 py-3 font-medium text-white shadow-sm transition hover:bg-pi-primary-hover"
           >
             开始旅程 <span>→</span>

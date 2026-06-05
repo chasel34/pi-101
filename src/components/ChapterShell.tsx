@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Sidebar } from "./Sidebar";
 import type { ChapterMeta } from "@/content/chapters";
 import { neighbors } from "@/content/chapters";
-import { sitePath } from "@/lib/site-path";
 
 export type Scene = {
   id: string;
@@ -145,7 +144,7 @@ export function ChapterShell({
           <div className="relative mt-6 mb-8 flex h-12 items-center justify-between px-6 text-sm text-pi-muted">
             <div>
               {prev && atStart && (
-                <Link href={sitePath(`/chapters/${prev.slug}/`)} className="hover:text-pi-ink">
+                <Link href={`/chapters/${prev.slug}/`} className="hover:text-pi-ink">
                   ← {String(prev.number).padStart(2, "0")} {prev.title}
                 </Link>
               )}
@@ -155,7 +154,7 @@ export function ChapterShell({
             </div>
             <div>
               {next && atEnd && !article && (
-                <Link href={sitePath(`/chapters/${next.slug}/`)} className="hover:text-pi-ink">
+                <Link href={`/chapters/${next.slug}/`} className="hover:text-pi-ink">
                   {String(next.number).padStart(2, "0")} {next.title} →
                 </Link>
               )}
