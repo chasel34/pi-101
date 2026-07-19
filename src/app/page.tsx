@@ -40,12 +40,19 @@ export default function HomePage() {
 
       <ArchitectureMap />
 
-      <footer className="mt-24 text-center text-sm text-pi-muted">
+      <footer className="mt-24 flex items-center justify-center gap-3 text-center text-sm text-pi-muted">
         <a
           href="https://github.com/earendil-works/pi-mono"
           className="inline-flex items-center gap-1 hover:text-pi-ink"
         >
           <span>GitHub · pi-mono</span>
+        </a>
+        <span aria-hidden className="text-pi-muted/50">·</span>
+        <a
+          href="https://github.com/chasel34/pi-101"
+          className="inline-flex items-center gap-1 hover:text-pi-ink"
+        >
+          <span>GitHub · pi-101</span>
         </a>
       </footer>
     </main>
